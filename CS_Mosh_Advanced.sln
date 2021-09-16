@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_03_LambdaExpressions
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_04_DelegatesAndEvents", "Lesson_04_DelegatesAndEvents\Lesson_04_DelegatesAndEvents.csproj", "{820697D1-197F-4505-95AF-146424D1D109}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_05_ExtensionMethods", "Lesson_05_ExtensionMethods\Lesson_05_ExtensionMethods.csproj", "{A5193B44-0951-436C-B146-89737B356EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_06_SortingMethods", "Lesson_06_SortingMethods\Lesson_06_SortingMethods.csproj", "{21D36080-FD23-4951-AC24-950D7B8C3B6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{820697D1-197F-4505-95AF-146424D1D109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{820697D1-197F-4505-95AF-146424D1D109}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{820697D1-197F-4505-95AF-146424D1D109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5193B44-0951-436C-B146-89737B356EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5193B44-0951-436C-B146-89737B356EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5193B44-0951-436C-B146-89737B356EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5193B44-0951-436C-B146-89737B356EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
