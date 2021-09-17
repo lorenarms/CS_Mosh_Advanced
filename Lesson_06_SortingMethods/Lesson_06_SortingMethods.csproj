@@ -37,6 +37,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Driver.cs" />
+    <Compile Include="Sorting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
