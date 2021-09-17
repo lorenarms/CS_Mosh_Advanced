@@ -22,8 +22,27 @@ namespace Lesson_07_HashTable
             myTable.Add(3, "Third");
             object i = 4;
             myTable.Add(i, "Fourth");
-            
-            //myTable.Add(i, "Fifth");
+
+            ICollection Key = myTable.Keys;
+
+
+
+            foreach(var val in Key)
+            {
+                Console.WriteLine(val + " : " + myTable[val]);
+            }
+
+            myTable.Add(5, "Fifth");
+
+            Console.WriteLine();
+
+            foreach (var val in Key)
+            {
+                Console.WriteLine(val + " : " + myTable[val]);
+            }
+
+            Console.WriteLine();
+
 
             Console.WriteLine("Key and Value pairs from the hash table:");
 
