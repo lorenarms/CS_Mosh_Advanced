@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_05_ExtensionMethods"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_06_SortingMethods", "Lesson_06_SortingMethods\Lesson_06_SortingMethods.csproj", "{21D36080-FD23-4951-AC24-950D7B8C3B6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_07_HashTable", "Lesson_07_HashTable\Lesson_07_HashTable.csproj", "{3BF1E2FB-46A6-49C3-B6AC-E9111D7F23AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D36080-FD23-4951-AC24-950D7B8C3B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF1E2FB-46A6-49C3-B6AC-E9111D7F23AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF1E2FB-46A6-49C3-B6AC-E9111D7F23AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF1E2FB-46A6-49C3-B6AC-E9111D7F23AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF1E2FB-46A6-49C3-B6AC-E9111D7F23AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
