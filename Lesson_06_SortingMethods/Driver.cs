@@ -33,7 +33,6 @@ namespace Lesson_06_SortingMethods
                 for (int j = 0; j < 10000; j++)
                 {
                     numbers[j] = randomNumber.Next(100, 999);
-                    //Console.WriteLine(rnd.Next(100, 999));
                 }
 
                 watch.Start();
