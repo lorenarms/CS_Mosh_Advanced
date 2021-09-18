@@ -15,60 +15,70 @@ namespace Lesson_06_SortingMethods
     {
         static void Main(string[] args)
         {
-            Stopwatch watch = new Stopwatch();
-            Random rnd = new Random();
-            int[] numbers = new int[10000];
-            int NUMBERS_SIZE = numbers.Length - 1;
+            Stopwatch watch = null;
+            Random randomNumber = null;
+            Sorting sort = null;
+            const double TICKS = TimeSpan.TicksPerMillisecond;
 
-            for (int j = 0; j < 10000; j++)
+            try
             {
-                numbers[j] = rnd.Next(100, 999);
-                //Console.WriteLine(rnd.Next(100, 999));
+                watch = new Stopwatch();
+                randomNumber = new Random();
+                sort = new Sorting();
+
+                int[] numbers = new int[10000];
+                int NUMBERS_SIZE = numbers.Length - 1;
+
+                Console.WriteLine("Creating new array...");
+                for (int j = 0; j < 10000; j++)
+                {
+                    numbers[j] = randomNumber.Next(100, 999);
+                    //Console.WriteLine(rnd.Next(100, 999));
+                }
+
+                watch.Start();
+                Sorting.MergeSort(numbers, 0, NUMBERS_SIZE);
+                watch.Stop();
+
+                var ts = watch.Elapsed;
+                double ms = ts.Ticks / TICKS;
+                
+                Console.WriteLine("\nSorted Array via 'MergeSort'");
+                Console.WriteLine("Time elapsed: " + ms + " milliseconds.");
+                Console.WriteLine("{0} {1:0.000} {2}", "Time Elapsed: ", ms / 1000, " seconds.\n");
+
+                Console.WriteLine("Creating new array...");
+                for (int j = 0; j < 10000; j++)
+                {
+                    numbers[j] = randomNumber.Next(100, 999);
+                    
+                }
+
+                watch.Start();
+                Sorting.QuickSort(numbers, 0, NUMBERS_SIZE);
+                watch.Stop();
+
+                ts = watch.Elapsed;
+                ms = ts.Ticks / TICKS;
+
+                Console.WriteLine("\nSorted Array via 'QuickSort'");
+                Console.WriteLine("Time elapsed: " + ms + " milliseconds.");
+                Console.WriteLine("{0} {1:0.000} {2}", "Time Elapsed: ", ms / 1000, " seconds.");
+
+
             }
-
-
-            double ticks = TimeSpan.TicksPerMillisecond;
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                
+            }
             
-            var sort = new Sorting();
-
-            //Console.WriteLine("Original Array");
-            //foreach (int n in numbers)
-            //{
-            //    Console.Write(n + " ");
-            //}
-
-            watch.Start();
-            Sorting.MergeSort(numbers, 0, NUMBERS_SIZE);
-            watch.Stop();
-
-            TimeSpan ts = watch.Elapsed;
-
-            //string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            //ts.Hours, ts.Minutes, ts.Seconds,
-            //ts.Milliseconds / 10);
             
-            double ms = ts.Ticks / ticks;
-
-            Console.WriteLine("\nSorted Array");
-            //foreach (int n in numbers)
-            //{
-            //    Console.Write(n + " ");
-            //}
-            Console.WriteLine("Time elapsed: " + ms + " milliseconds.");
-            Console.WriteLine("{0} {1:0.00} {2}", "Time Elapsed: ", ms / 1000, " seconds.");
-
-
             Console.WriteLine("\nThis is working...");
             Console.ReadKey();
-
-            ///
-            ///
-            ///
-
-
-
-
 
         }
     }
