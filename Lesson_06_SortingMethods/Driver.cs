@@ -16,17 +16,27 @@ namespace Lesson_06_SortingMethods
         static void Main(string[] args)
         {
             Stopwatch watch = new Stopwatch();
+            Random rnd = new Random();
+            int[] numbers = new int[10000];
+            int NUMBERS_SIZE = numbers.Length - 1;
+
+            for (int j = 0; j < 10000; j++)
+            {
+                numbers[j] = rnd.Next(100, 999);
+                //Console.WriteLine(rnd.Next(100, 999));
+            }
+
+
             double ticks = TimeSpan.TicksPerMillisecond;
 
-            int[] numbers  = { 6, 3, 7, 4, 8, 1, 2 , 9, 10, 13, 15, 12, 2, 5, 6, 16, 5};
-            int NUMBERS_SIZE = numbers.Length - 1;
+            
             var sort = new Sorting();
 
-            Console.WriteLine("Original Array");
-            foreach (int n in numbers)
-            {
-                Console.Write(n + " ");
-            }
+            //Console.WriteLine("Original Array");
+            //foreach (int n in numbers)
+            //{
+            //    Console.Write(n + " ");
+            //}
 
             watch.Start();
             Sorting.MergeSort(numbers, 0, NUMBERS_SIZE);
@@ -41,10 +51,10 @@ namespace Lesson_06_SortingMethods
             double ms = ts.Ticks / ticks;
 
             Console.WriteLine("\nSorted Array");
-            foreach (int n in numbers)
-            {
-                Console.Write(n + " ");
-            }
+            //foreach (int n in numbers)
+            //{
+            //    Console.Write(n + " ");
+            //}
             Console.WriteLine("Time elapsed: " + ms + " milliseconds.");
             Console.WriteLine("{0} {1:0.00} {2}", "Time Elapsed: ", ms / 1000, " seconds.");
 
