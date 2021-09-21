@@ -14,7 +14,8 @@ namespace Lesson_09_BinaryTree
         public Node(int item)
         {
             key = item;
-            left = right = null;
+            left = null;
+            right = null;
         }
     }
     public class BinaryTree
@@ -66,6 +67,8 @@ namespace Lesson_09_BinaryTree
             / \
          null null
             */
+
+            Console.ReadKey();
         }
     }
 }
