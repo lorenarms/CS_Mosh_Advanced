@@ -1,74 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace Lesson_09_BinaryTree
-{
-    public class Node
-    {
-        public int key;
-        public Node left, right;
+//namespace Lesson_09_BinaryTree
+//{
+//    public class Node
+//    {
+//        public int key;
+//        public Node left, right;
 
-        public Node(int item)
-        {
-            key = item;
-            left = null;
-            right = null;
-        }
-    }
-    public class BinaryTree
-    {
-        // Root of Binary Tree
-        Node root;
+//        public Node(int item)
+//        {
+//            key = item;
+//            left = null;
+//            right = null;
+//        }
+//    }
+//    public class BinaryTree
+//    {
+//        // Root of Binary Tree
+//        Node root;
 
-        // Constructors
-        BinaryTree(int key)
-        {
-            root = new Node(key);
-        }
+//        // Constructors
+//        BinaryTree(int key)
+//        {
+//            root = new Node(key);
+//        }
 
-        BinaryTree()
-        {
-            root = null;
-        }
+//        BinaryTree()
+//        {
+//            root = null;
+//        }
 
-        // Driver Code
-        public static void Main(String[] args)
-        {
-            BinaryTree tree = new BinaryTree();
+//        // Driver Code
+//        public static void Main(String[] args)
+//        {
+//            BinaryTree tree = new BinaryTree();
 
-            /*create root*/
-            tree.root = new Node(1);
+//            /*create root*/
+//            tree.root = new Node(1);
 
-            /* following is the tree after above statement
+//            /* following is the tree after above statement
 
-                 1
-                / \
-             null null     */
-            tree.root.left = new Node(2);
-            tree.root.right = new Node(3);
+//                 1
+//                / \
+//             null null     */
+//            tree.root.left = new Node(2);
+//            tree.root.right = new Node(3);
 
-            /* 2 and 3 become left and right children of 1
-                    1
-                 /     \
-               2        3
-             /  \     /   \
-           null null null null */
-            tree.root.left.left = new Node(4);
+//            /* 2 and 3 become left and right children of 1
+//                    1
+//                 /     \
+//               2        3
+//             /  \     /   \
+//           null null null null */
+//            tree.root.left.left = new Node(4);
 
-            /* 4 becomes left child of 2
-                    1
-                 /     \
-               2        3
-             /  \     /   \
-             4 null null null
-            / \
-         null null
-            */
+//            /* 4 becomes left child of 2
+//                    1
+//                 /     \
+//               2        3
+//             /  \     /   \
+//             4 null null null
+//            / \
+//         null null
+//            */
 
-            Console.ReadKey();
-        }
-    }
-}
+//            Console.ReadKey();
+//        }
+//    }
+//}
