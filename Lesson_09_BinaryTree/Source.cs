@@ -107,8 +107,12 @@ namespace Lesson_09_BinaryTree
 
         public void Remove(Node curr, int key)
         {
-            
+            //Node parent = null;
             var parent = new Node();
+            parent = null;
+            //Console.WriteLine("Current node: " + curr.key);
+            //Console.WriteLine("Parent node: " + parent.key);
+
 
             while (curr != null)
             {
@@ -156,6 +160,7 @@ namespace Lesson_09_BinaryTree
                         }
                         else
                         {
+                            
                             parent.right = curr.right;
                         }
                     }
@@ -168,6 +173,7 @@ namespace Lesson_09_BinaryTree
                             succ = succ.left;
                         }
                         curr.key = succ.key;
+
                         Remove(curr.right, succ.key);
                     }
                     return;
@@ -193,23 +199,24 @@ namespace Lesson_09_BinaryTree
         {
             var tree = new Tree();
             tree.Add(5);
+            tree.Add(7);
             tree.Add(6);
-            tree.Add(12);
-            tree.Add(17);
+            tree.Add(8);
+            tree.Add(3);
             tree.Add(2);
             tree.Add(4);
-            tree.Add(14);
 
             tree.PrintTree(tree.GetRoot());
             Console.WriteLine("Root: " + tree.GetRoot().key + "\n");
             Console.ReadKey();
 
-            tree.Remove(tree.GetRoot(), 2);
+            tree.Remove(tree.GetRoot(), 8);
             tree.PrintTree(tree.GetRoot());
             Console.WriteLine("Root: " + tree.GetRoot().key + "\n");
             Console.ReadKey();
 
-            tree.Remove(tree.GetRoot(), 5);
+
+            tree.Remove(tree.GetRoot(), 6);
             tree.PrintTree(tree.GetRoot());
             Console.WriteLine("Root: " + tree.GetRoot().key + "\n");
 
