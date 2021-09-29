@@ -1,8 +1,17 @@
 ﻿namespace Lesson_06_SortingMethods
 {
-    class Sorting
+    public interface ISorting
     {
-       public static int Partition(int[] numbers, int i, int k)
+        int Sort(int[] numbers, int i, int k);
+    }
+
+    public class QuickSorter : ISorting
+    {
+        public QuickSorter()
+        {
+
+        }
+        public int Sort(int[] numbers, int i, int k)
         {
             int l = 0;
             int h = 0;
@@ -17,11 +26,11 @@
             h = k;
             while (!done)
             {
-                while(numbers[l] < pivot)
+                while (numbers[l] < pivot)
                 {
                     ++l;
                 }
-                while(pivot < numbers[h])
+                while (pivot < numbers[h])
                 {
                     --h;
                 }
@@ -42,32 +51,39 @@
             return h;
         }
 
-        public static void QuickSort(int[] numbers, int i, int k)
+        void QuickSort(int[] numbers, int i, int k)
         {
             int j = 0;
 
             if (i >= k) { return; }
-            j = Partition(numbers, i, k);
+            Sort(numbers, i, k);
             QuickSort(numbers, i, j);
             QuickSort(numbers, j + 1, k);
 
             return;
         }
+    }
 
-        public static void MergeSort(int[] numbers, int begin, int end)
+    public class MergeSorter : ISorting
+    {
+        public MergeSorter()
+        {
+
+        }
+        public int Sort(int[] numbers, int begin, int end)
         {
             if (begin < end)
             {
                 int mid = begin + (end - begin) / 2;
 
-                MergeSort(numbers, begin, mid);
-                MergeSort(numbers, mid + 1, end);
+                Sort(numbers, begin, mid);
+                Sort(numbers, mid + 1, end);
 
                 Merge(numbers, begin, mid, end);
             }
+            return 0;
         }
-
-        public static void Merge(int[] numbers, int begin, int mid, int end)
+        void Merge(int[] numbers, int begin, int mid, int end)
         {
             int n1 = mid - begin + 1;
             int n2 = end - mid;
@@ -103,14 +119,14 @@
                 k++;
             }
 
-            while(i < n1)
+            while (i < n1)
             {
                 numbers[k] = L[i];
                 i++;
                 k++;
             }
 
-            while(j < n2)
+            while (j < n2)
             {
                 numbers[k] = R[j];
                 j++;
@@ -119,4 +135,5 @@
 
         }
     }
+
 }

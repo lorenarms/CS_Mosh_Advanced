@@ -17,15 +17,13 @@ namespace Lesson_06_SortingMethods
         {
             Stopwatch watch = null;
             Random randomNumber = null;
-            Sorting sort = null;
             const double TICKS = TimeSpan.TicksPerMillisecond;
 
             try
             {
                 watch = new Stopwatch();
                 randomNumber = new Random();
-                sort = new Sorting();
-
+                
                 int[] numbers = new int[10000];
                 int NUMBERS_SIZE = numbers.Length - 1;
 
@@ -36,7 +34,8 @@ namespace Lesson_06_SortingMethods
                 }
 
                 watch.Start();
-                Sorting.MergeSort(numbers, 0, NUMBERS_SIZE);
+                var merge = new MergeSorter();
+                merge.Sort(numbers, 0, NUMBERS_SIZE);
                 watch.Stop();
 
                 var ts = watch.Elapsed;
@@ -54,7 +53,8 @@ namespace Lesson_06_SortingMethods
                 }
 
                 watch.Start();
-                Sorting.QuickSort(numbers, 0, NUMBERS_SIZE);
+                var quick = new QuickSorter();
+                quick.Sort(numbers, 0, NUMBERS_SIZE);
                 watch.Stop();
 
                 ts = watch.Elapsed;
