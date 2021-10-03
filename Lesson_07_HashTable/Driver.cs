@@ -18,14 +18,16 @@ namespace Lesson_07_HashTable
             int j = 1;
             myTable.Add(j, "First");
             j++;
-            myTable.Add(j, "Second");
+            myTable.Add(j, 13);
             myTable.Add(3, "Third");
             object i = 4;
             myTable.Add(i, "Fourth");
 
-            myTable[2] += "17";
+            //myTable[2] += 17;
 
             ICollection Key = myTable.Keys;
+
+            
 
 
 
@@ -39,7 +41,13 @@ namespace Lesson_07_HashTable
 
             myTable[6] = 17;
 
-            Console.WriteLine();
+            myTable.Contains(17);
+
+            Console.WriteLine(myTable.ContainsValue(17));
+            Console.WriteLine(myTable.ContainsValue("Fourth"));
+
+            Console.WriteLine(myTable.Count);
+
 
             foreach (var val in Key)
             {
@@ -77,7 +85,8 @@ namespace Lesson_07_HashTable
             Console.WriteLine(citiesOfUSA);
 
             cities["USA"] += " Los Angeles, Boston";
-            
+
+            cities.Add(1, "new city");
 
             citiesOfUSA = (string)cities["USA"];
 

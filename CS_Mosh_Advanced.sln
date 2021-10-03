@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_08_LinkedLists2", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_09_BinaryTree", "Lesson_09_BinaryTree\Lesson_09_BinaryTree.csproj", "{0CB63D5F-E821-4DF2-BE8F-A63197D0C046}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_10_HashTable_02", "Lesson_10_HashTable_02\Lesson_10_HashTable_02.csproj", "{47037928-AD01-4C23-B645-3B49369807EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{0CB63D5F-E821-4DF2-BE8F-A63197D0C046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB63D5F-E821-4DF2-BE8F-A63197D0C046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB63D5F-E821-4DF2-BE8F-A63197D0C046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47037928-AD01-4C23-B645-3B49369807EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47037928-AD01-4C23-B645-3B49369807EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47037928-AD01-4C23-B645-3B49369807EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47037928-AD01-4C23-B645-3B49369807EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
