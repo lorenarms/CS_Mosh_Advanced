@@ -13,6 +13,7 @@ namespace Lesson_10_HashTable_02
         private int _id;
         private string _firstName { get; set; }
         private string _lastName { get; set; }
+        private DateTime _birthdate { get; set; }
 
         public Employee()
         {
