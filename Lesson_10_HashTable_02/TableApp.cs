@@ -5,41 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace Lesson_10_HashTable_02
 {
-    class Employee
+    class TableApp
     {
-        private int _id;
-        private string _firstName { get; set; }
-        private string _lastName { get; set; }
-        private DateTime _birthdate { get; set; }
-
-        public Employee()
-        {
-
-        }
-        public Employee(int id, string name)
-        {
-            this._id = id;
-            string[] s = name.Split(' ');
-            _firstName = s[0];
-            _lastName = s[1];
-            Console.WriteLine("The new employee has been created!\n" + _lastName + ", " + _firstName);
-        }
-        public int GetID()
-        {
-            return this._id;
-        }
-        public string GetName()
-        {
-            return this._firstName + " " + this._lastName;
-        }
-    }
-
-    class Driver
-    {
-        public static void Main(string[] args)
+        public void Start()
         {
             var table = new Hashtable();
             table = null;
@@ -72,11 +44,20 @@ namespace Lesson_10_HashTable_02
                         }
                         case 2:
                         {
-                            Console.Clear();
-                                Console.WriteLine("You are adding an element.");
-                                AddElement(table);
-                                //Console.ReadKey();
+                            if (table == null)
+                            {
+                                Clear();
+                                Console.WriteLine("Please create a table first.");
+                                ReadKey();
+                                Clear();
                                 break;
+                            }
+                            else
+                            {
+                                AddElement(table);
+                            }
+
+                            break;
 
                         }
                         case 3:
@@ -160,7 +141,7 @@ namespace Lesson_10_HashTable_02
             while (add)
             {
                 Console.Clear();
-                Console.Write("\nEnter the employee's first and\nlast name, separated by a space: ");
+                Console.Write("Enter the employee's first and\nlast name, separated by a space: ");
                 fullName = Console.ReadLine();
                 while (!fullName.Contains(' '))
                 {
