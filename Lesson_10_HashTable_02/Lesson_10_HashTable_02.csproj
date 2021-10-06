@@ -37,11 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
-    <Compile Include="Utils\Application.cs" />
-    <Compile Include="Utils\Color.cs" />
-    <Compile Include="Utils\DrawTitle.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="TableApp.cs" />
-    <Compile Include="Utils\Menu.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup />

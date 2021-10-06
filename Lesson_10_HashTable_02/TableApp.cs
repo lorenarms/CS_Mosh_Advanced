@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.PerformanceData;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
@@ -13,17 +15,24 @@ namespace Lesson_10_HashTable_02
     {
         public void Start()
         {
+            
+            String[] options = { "Create a table", "Add to the table", "Remove an item", "Print all items", "Exit" };
+            
             var table = new Hashtable();
             table = null;
             ICollection keys = null;
             bool run = true;
-            int selection;
+            var newMenu = new Menu(options, 1, 1, 0);
+            //newMenu.ModifyMenuLeftJustified(options);
+            newMenu.ModifyMenuCentered(options);
+            newMenu.CenterMenuToConsole();
+            
             try
             {
                 while (run)
                 {
-                    Console.WriteLine("Select a menu item:\n1: Create a table\n2: Add to the table\n3: Remove an item\n4: Print all items\n9: Exit");
-                    int.TryParse(Console.ReadLine(), out selection);
+                    Clear();
+                    int selection = newMenu.RunMenu();
                     switch (selection)
                     {
                         case 1:
@@ -87,7 +96,7 @@ namespace Lesson_10_HashTable_02
                                 break;
 
                         }
-                        case 9:
+                        case 5:
                         {
                             Console.Clear();
                                 Console.WriteLine("Exiting program, goodbye!");
@@ -103,6 +112,11 @@ namespace Lesson_10_HashTable_02
                             Console.Clear();
                             break;
                         }
+                        case 0:
+                        {
+                            Environment.Exit(0);
+                            break;
+                        }
                         default:
 
                         {
@@ -113,12 +127,6 @@ namespace Lesson_10_HashTable_02
                             break;
                         }
                     }
-                    
-
-
-
-
-
                 }
             }
             catch (Exception a)
@@ -127,16 +135,14 @@ namespace Lesson_10_HashTable_02
                 throw;
             }
             
-
-
-            //Console.WriteLine("Program end. Press any key to exit");
-            Console.ReadKey();
         }
 
         public static void AddElement(Hashtable table)
         {
             int newId = 0;
             string fullName = null;
+            //int day, month, year;
+            DateTime birthDateTime;
             bool add = true;
             while (add)
             {
@@ -156,6 +162,17 @@ namespace Lesson_10_HashTable_02
                     newId = rand.Next(100, 999);
                 }
 
+                string s = ReadLine();
+                while (TryParse(s, out int day))
+                {
+
+                }
+
+                //Console.WriteLine("Enter the employee's Birth day as DD: ");
+                //day = int.TryParse(Console.ReadLine());
+
+                //birthDateTime.
+
                 Console.WriteLine("The new employee is " + fullName);
                 Console.WriteLine("Their employee ID will be: " + newId);
                 Console.WriteLine("Is this correct? y/n ");
@@ -164,15 +181,12 @@ namespace Lesson_10_HashTable_02
                 {
                     add = false;
                 }
+                
+
             }
 
             Employee newEmployee = new Employee(newId, fullName);
             table.Add(newId, newEmployee);
-            
-            
-
-
-
         }
     }
 }
