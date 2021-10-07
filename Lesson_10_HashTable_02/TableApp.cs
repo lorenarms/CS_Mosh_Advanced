@@ -16,13 +16,13 @@ namespace Lesson_10_HashTable_02
         public void Start()
         {
             
-            String[] options = { "Create a table", "Add to the table", "Remove an item", "Print all items", "Exit" };
+            String[] options = { "Create a table", "Add to the table", "Remove an item", "Print all items", "Import Table", "Save", "Exit" };
             
             var table = new Hashtable();
             table = null;
             ICollection keys = null;
             bool run = true;
-            var newMenu = new Menu(options, 1, 1, 0);
+            var newMenu = new Menu(options, 1, 0);
             //newMenu.ModifyMenuLeftJustified(options);
             newMenu.ModifyMenuCentered(options);
             newMenu.CenterMenuToConsole();
@@ -41,8 +41,7 @@ namespace Lesson_10_HashTable_02
                             if (table == null)
                             {
                                 table = new Hashtable();
-                                keys = table.Keys;
-                                    Console.WriteLine("A new table has been created!");
+                                Console.WriteLine("A new table has been created!");
                             }
                             else
                             {
@@ -59,7 +58,6 @@ namespace Lesson_10_HashTable_02
                                 Console.WriteLine("Please create a table first.");
                                 ReadKey();
                                 Clear();
-                                break;
                             }
                             else
                             {
@@ -96,7 +94,7 @@ namespace Lesson_10_HashTable_02
                                 break;
 
                         }
-                        case 5:
+                        case 7:
                         {
                             Console.Clear();
                                 Console.WriteLine("Exiting program, goodbye!");
@@ -163,10 +161,10 @@ namespace Lesson_10_HashTable_02
                 }
 
                 string s = ReadLine();
-                while (TryParse(s, out int day))
-                {
+                //while (TryParse(s, out int day))
+                //{
 
-                }
+                //}
 
                 //Console.WriteLine("Enter the employee's Birth day as DD: ");
                 //day = int.TryParse(Console.ReadLine());

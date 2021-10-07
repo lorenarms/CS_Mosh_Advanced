@@ -10,13 +10,13 @@ namespace Lesson_10_HashTable_02
     class Menu
     {
         //private string _prompt = "";
-        private string[] _options;
+        private readonly string[] _options;
         private int _currentSelection;
         private int _drawMenuColumnPos;
-        private int _drawMenuRowPos;
+        private readonly int _drawMenuRowPos;
         private int _menuMaximumWidth;
 
-        public Menu(string[] options, int startPosition, int row, int col)
+        public Menu(string[] options, int row, int col)
         {
             //_prompt = prompt;
             _options = options;
