@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_09_BinaryTree", "Les
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_10_HashTable_02", "Lesson_10_HashTable_02\Lesson_10_HashTable_02.csproj", "{47037928-AD01-4C23-B645-3B49369807EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_11_GeneralPractice", "Lesson_11_GeneralPractice\Lesson_11_GeneralPractice.csproj", "{C8C128A5-9A3B-4989-85D3-3A1B005BEDB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_12_GeneralPractice", "Lesson_12_GeneralPractice\Lesson_12_GeneralPractice.csproj", "{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{47037928-AD01-4C23-B645-3B49369807EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47037928-AD01-4C23-B645-3B49369807EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47037928-AD01-4C23-B645-3B49369807EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C128A5-9A3B-4989-85D3-3A1B005BEDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C128A5-9A3B-4989-85D3-3A1B005BEDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C128A5-9A3B-4989-85D3-3A1B005BEDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C128A5-9A3B-4989-85D3-3A1B005BEDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
