@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_11_GeneralPractice",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_12_GeneralPractice", "Lesson_12_GeneralPractice\Lesson_12_GeneralPractice.csproj", "{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_13_FindingTheClosestToZero", "Lesson_13_FindingTheClosestToZero\Lesson_13_FindingTheClosestToZero.csproj", "{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

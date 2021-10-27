@@ -15,11 +15,13 @@ namespace Lesson_03_LambdaExpressions
 
         }
 
+        // func is the param type to this method
         public int MyMethod(Func<int, int, int, int> MyFunc)
         {
             return MyFunc(3, 4, 5);
         }
 
+        // action is kind of pointless cause you can't pass as ref
         public void MyActionMethod(Action<int, int> MyAction)
         {
             int a = 4;
@@ -39,6 +41,8 @@ namespace Lesson_03_LambdaExpressions
             a++;
             b++;
         }
+        
+        // func must return something
         public static int MyFuncToPass(int a, int b, int c)
         {
             return a * b * c;
@@ -48,6 +52,8 @@ namespace Lesson_03_LambdaExpressions
         static void Main(string[] args)
         {
             var newObject = new Objects();
+
+            // call MyMethod and pass MyFuncToPass as param
             int funcNum = newObject.MyMethod(MyFuncToPass);
             Console.WriteLine($"Func returned: {funcNum}" );
 
@@ -63,8 +69,9 @@ namespace Lesson_03_LambdaExpressions
 
             Func<int, int, int, int> tripleMult = (i, j, k) => i * j * k;
 
-            int num = square(3);
+            //int num = square(3);
 
+            // calling the above funcs
             Console.WriteLine(square(3));
 
             Console.WriteLine(doubleMult(2, 3));
@@ -80,6 +87,7 @@ namespace Lesson_03_LambdaExpressions
 
             };
 
+            // call the above action
             div(2);
 
 
