@@ -27,7 +27,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_11_GeneralPractice",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_12_GeneralPractice", "Lesson_12_GeneralPractice\Lesson_12_GeneralPractice.csproj", "{31A86F8F-9F7D-4B04-9B63-E96BEF30F63B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_13_FindingTheClosestToZero", "Lesson_13_FindingTheClosestToZero\Lesson_13_FindingTheClosestToZero.csproj", "{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_13_TechnicalAssessment", "Lesson_13_FindingTheClosestToZero\Lesson_13_TechnicalAssessment.csproj", "{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_14_MoreTechnicalAssessment", "Lesson_14_TechnicalAssessment\Lesson_14_MoreTechnicalAssessment.csproj", "{264E5859-9FC7-4B36-99A6-2782EA285E74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_15_FindingPatterns", "Lesson_15_FindingPatterns\Lesson_15_FindingPatterns.csproj", "{4D9BFD00-3F0F-4FBB-8709-F4CD7A9B3EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_16_BitwiseOperators", "Lesson_16_BitwiseOperators\Lesson_16_BitwiseOperators.csproj", "{68816E90-F071-4473-9194-0E98CDF488F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +93,18 @@ Global
 		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF80F74-5F0F-42FE-91A9-FA9793DAB3B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264E5859-9FC7-4B36-99A6-2782EA285E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264E5859-9FC7-4B36-99A6-2782EA285E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264E5859-9FC7-4B36-99A6-2782EA285E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264E5859-9FC7-4B36-99A6-2782EA285E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9BFD00-3F0F-4FBB-8709-F4CD7A9B3EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9BFD00-3F0F-4FBB-8709-F4CD7A9B3EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9BFD00-3F0F-4FBB-8709-F4CD7A9B3EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9BFD00-3F0F-4FBB-8709-F4CD7A9B3EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68816E90-F071-4473-9194-0E98CDF488F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68816E90-F071-4473-9194-0E98CDF488F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68816E90-F071-4473-9194-0E98CDF488F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68816E90-F071-4473-9194-0E98CDF488F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
