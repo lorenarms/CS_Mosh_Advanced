@@ -63,9 +63,11 @@ namespace Lesson_18_FindingPatternsWithLoops
                             location[0]++;
                         }
 
-                        Write(str[i][j]);
-
-
+                        // conditional to stop error of trying to write out of bounds of array
+                        if (j < str[0].Length)
+                        {
+                            Write(str[i][j]);
+                        }
                     }
                     else
                     {
@@ -78,6 +80,63 @@ namespace Lesson_18_FindingPatternsWithLoops
             }
         }
 
+        public static int[] FindPattern(string[] str, string[] pat, int strWidth, int strHeight, int patWidth,
+            int patHeight)
+        {
+            int[] location = {-1, -1};
+
+            // flag for if patter is found
+            bool foundPattern = false;
+
+            // outer loop through 'rows' of main array
+            for (int i = 0; i < strHeight; i++)
+            {
+                // inner loop for chars of each row
+                for (int j = 0; j < strWidth; j++)
+                {
+
+                    // look for matching single char first
+                    // only finds the first instance (foundPattern stops any others)
+                    // doesn't check if the found char is too close to the end of the string
+                    if (str[i][j] == pat[0][0] && !foundPattern && (j < strWidth - patWidth))
+                    {
+                        // marker vars
+                        int l = 0;
+                        int k = i;
+
+                        // set a substring starting at row[k] and ending at length of pattern
+                        string tempStr = str[k].Substring(j, patWidth + 1);
+
+
+                        // while the chars in the substring and the current pattern row match
+                        while (tempStr == pat[l])
+                        {
+                            // check if 'l' marker equals the number of 'rows' in the pattern
+                            // l marker will equal this only if the while condition was true enough times
+                            if (l == patHeight)
+                            {
+                                foundPattern = true;
+                                location[0] = i;
+                                location[1] = j;
+                                break;
+                            }
+
+                            // increment the markers
+                            l++;
+                            k++;
+
+                            // update the substring to compare pattern to
+                            tempStr = str[k].Substring(j, patWidth + 1);
+                        }
+
+
+                    }
+                }
+            }
+
+
+            return location;
+        }
 
         public static void Main(string[] args)
         {
@@ -104,81 +163,29 @@ namespace Lesson_18_FindingPatternsWithLoops
 
             DrawPicture(str, pat);
 
-
-
             // variables for 'height' of array
             // and length of array
             // assume all 'rows' are of same length
-            int strRows = str.Length;
-            int strCols = str[0].Length;
+            int strHeight = str.Length;
+            int strWidth = str[0].Length;
 
             // vars for 'height' of pattern
             // and length of pattern
-            int patRows = pat.Length - 1;
-            int patCols = pat[0].Length - 1;
+            int patHeight = pat.Length - 1;
+            int patWidth = pat[0].Length - 1;
 
-            // flag for if patter is found
-            bool foundPattern = false;
+            int[] location = FindPattern(str, pat, strWidth, strHeight, patWidth, patHeight);
 
-            int[] location = {-1, -1};
-
+            if (location[0] == -1 && location[1] == -1)
+            {
+                WriteLine("Pattern not found.");
+            }
+            else
+            {
+                WriteLine("Pattern Found at row " + (location[0] + 1) + ", column " + (location[1] + 1));
+            }
             
-            // outer loop through 'rows' of main array
-            for (int i = 0; i < strRows; i++)
-            {
-                // inner loop for chars of each row
-                for (int j = 0; j < strCols; j++)
-                {
-
-                    // look for matching single char first
-                    if (str[i][j] == pat[0][0] && !foundPattern)
-                    {
-                        // marker vars
-                        int l = 0;
-                        int k = i;
-
-                        // set a substring starting at row[k] and ending at length of pattern
-                        string tempStr = str[k].Substring(j, patCols + 1);
-
-                        
-                        // while the chars in the substring and the current pattern row match
-                        while (tempStr == pat[l])
-                        {
-                            
-                            
-                            // check if 'l' marker equals the number of 'rows' in the pattern
-                            // l marker will equal this only if the while condition was true enough times
-                            if (l == patRows)
-                            {
-                                foundPattern = true;
-                                WriteLine("Pattern Found at row " + (i + 1) + ", column " + (j + 1));
-                                location[0] = i;
-                                location[1] = j;
-                                
-
-                                break;
-                            }
-
-                            // increment the markers
-                            l++;
-                            k++;
-
-                            // update the substring to compare pattern to
-                            tempStr = str[k].Substring(j, patCols + 1);
-                        }
-
-
-                    }
-                }
-            }
-
-            if (!foundPattern)
-            {
-                WriteLine("Pattern not found");
-            }
-
             PrintFinalPicture(str, pat, location);
-
 
             ReadKey();
         }
