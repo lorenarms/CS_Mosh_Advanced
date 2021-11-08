@@ -35,6 +35,10 @@ namespace Lesson_18_FindingPatternsWithLoops
 
         public static void PrintFinalPicture(string[] str, string[] pat, int[] location)
         {
+            int patLength = pat.Length;
+            int patHeight = pat[0].Length;
+            int patRow = location[0];
+
             WriteLine("LOCATION:");
             for (int i = 0; i < str.Length; i++)
             {
@@ -54,7 +58,7 @@ namespace Lesson_18_FindingPatternsWithLoops
 
                         ResetColor();
 
-                        if (location[0] < pat.Length)
+                        if (location[0] < patLength + patRow - 1)
                         {
                             location[0]++;
                         }
@@ -67,8 +71,8 @@ namespace Lesson_18_FindingPatternsWithLoops
                     {
                         Write(str[i][j]);
                     }
-                    
-                    
+                    //Write(str[i][j]);
+
                 }
                 Write("\n");
             }
@@ -77,11 +81,26 @@ namespace Lesson_18_FindingPatternsWithLoops
 
         public static void Main(string[] args)
         {
-            string[] str = {
-                "abcdef", "ghijkl", "mnopqr", "stuvwx"
-            };
+            string[] str = System.IO.File.ReadAllLines(@"C:\Users\dayar\Desktop\pic.txt");
 
-            string[] pat = {"abc", "ghi", "mno"};
+            //string[] str = {
+            //    "abcdef", "ghijkl", "mnopqr", "stuvwx"
+            //};
+
+            //string[] pat = {"abc", "ghi", "mno", "stu"};
+            //string[] pat = {"abc"};
+            //string[] pat = {"abc", "ghi"};
+            //string[] pat = {"abc", "ghi", "mno"};
+            //string[] pat = {"ghi", "mno", "stu"};
+            //string[] pat = {"mno", "stu" };
+            //string[] pat = {"big", "lte"};
+            //string[] pat = {"ij", "op" };
+
+            WriteLine("Input a lowercase string to find: ");
+            string input = ReadLine();
+            string[] pat = {input};
+            //pat[0] = "big";
+
 
             DrawPicture(str, pat);
 
@@ -90,8 +109,8 @@ namespace Lesson_18_FindingPatternsWithLoops
             // variables for 'height' of array
             // and length of array
             // assume all 'rows' are of same length
-            int strRows = str.Length - 1;
-            int strCols = str[0].Length - 1;
+            int strRows = str.Length;
+            int strCols = str[0].Length;
 
             // vars for 'height' of pattern
             // and length of pattern
@@ -103,17 +122,16 @@ namespace Lesson_18_FindingPatternsWithLoops
 
             int[] location = {-1, -1};
 
-            //WriteLine("strRows: " + strRows + "\nstrCols: " + strCols);
-            //WriteLine("patRows: " + patRows + "\npatCols: " + patCols);
-
+            
             // outer loop through 'rows' of main array
             for (int i = 0; i < strRows; i++)
             {
                 // inner loop for chars of each row
                 for (int j = 0; j < strCols; j++)
                 {
+
                     // look for matching single char first
-                    if (str[i][j] == pat[0][0])
+                    if (str[i][j] == pat[0][0] && !foundPattern)
                     {
                         // marker vars
                         int l = 0;
@@ -122,14 +140,11 @@ namespace Lesson_18_FindingPatternsWithLoops
                         // set a substring starting at row[k] and ending at length of pattern
                         string tempStr = str[k].Substring(j, patCols + 1);
 
-                        //WriteLine("tempStr: " + tempStr);
-
+                        
                         // while the chars in the substring and the current pattern row match
                         while (tempStr == pat[l])
                         {
                             
-                            //WriteLine("tempStr: " + tempStr);
-                            //WriteLine("pat[l]: " + pat[l]);
                             
                             // check if 'l' marker equals the number of 'rows' in the pattern
                             // l marker will equal this only if the while condition was true enough times
