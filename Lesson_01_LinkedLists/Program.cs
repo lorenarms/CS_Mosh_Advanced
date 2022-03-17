@@ -91,7 +91,7 @@ namespace Lesson_01_LinkedLists
             var llist = new LinkedList();           //create a list object
             llist.SetHead(new LinkedList.Node(1, "Lawrence Artl"));  //set where the start of the list is
             
-            var second = new LinkedList.Node(2, "Ranger");    //create a second list item
+            var second = new LinkedList.Node(2, "Ranger Artl");    //create a second list item
             var third = new LinkedList.Node(3, "Trinity Day");     //create a third list item
 
             llist.GetHead().SetNextNode(second);    //set the head's 'next' pointer to 'second'
