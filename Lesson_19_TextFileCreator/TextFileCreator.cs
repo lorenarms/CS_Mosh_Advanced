@@ -49,7 +49,7 @@ namespace Lesson_19_TextFileCreator
             for (int i = 1; i <= num; i++)
             {
                 // name the file and the path 
-                string path = "C:\\Users\\dayar\\Desktop\\Files\\" + name + i + ".txt";
+                string path = "C:\\Users\\lawre\\Desktop\\New folder\\" + name + i + ".txt";
                 string text;
 
                 // create bytes of random string
