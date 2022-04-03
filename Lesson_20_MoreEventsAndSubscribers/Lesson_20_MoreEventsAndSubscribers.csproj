@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{820697D1-197F-4505-95AF-146424D1D109}</ProjectGuid>
+    <ProjectGuid>{B9EC338A-7617-43B4-9C05-6D0B496089B5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lesson_04_DelegatesAndEvents</RootNamespace>
-    <AssemblyName>Lesson_04_DelegatesAndEvents</AssemblyName>
+    <RootNamespace>Lesson_20_MoreEventsAndSubscribers</RootNamespace>
+    <AssemblyName>Lesson_20_MoreEventsAndSubscribers</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,14 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Driver.cs" />
-    <Compile Include="MailService.cs" />
-    <Compile Include="TextService.cs" />
-    <Compile Include="Video.cs" />
-    <Compile Include="VideoEncoder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
