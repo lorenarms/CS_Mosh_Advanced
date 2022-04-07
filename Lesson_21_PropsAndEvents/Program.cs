@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,10 @@ namespace Lesson_21_PropsAndEvents
         {
             Dresser d = new Dresser();
             Cabinet c = new Cabinet();
+            Lamp l = new Lamp();
+            
 
+            d.DresserFinished += DresserCompleted;
             d.DresserFinished += PropCompleted;
             c.CabinetFinished += PropCompleted;
 
@@ -26,6 +30,7 @@ namespace Lesson_21_PropsAndEvents
             {
                 WriteLine("Which prop do you want to try?");
                 Int32.TryParse(ReadLine(), out userPropChoice);
+
                 
                 // conditionals for which prop to play
                 if (userPropChoice == 1)
@@ -34,7 +39,11 @@ namespace Lesson_21_PropsAndEvents
                 }
                 else if (userPropChoice == 2)
                 {
-                    d.Start(0);
+                    d.Start(l);
+                }
+                else if (userPropChoice == 3)
+                {
+                    l.Start(0);
                 }
             }
 
@@ -43,6 +52,7 @@ namespace Lesson_21_PropsAndEvents
             ReadKey();
         }
 
+        
         public static void PropCompleted(object sender, object next)
         {
             string s = sender.ToString();
@@ -52,5 +62,12 @@ namespace Lesson_21_PropsAndEvents
 
             WriteLine($"{s} Completed, {n} Activated");
         }
+
+        // each prop gets its own 'completed' event to start the next one
+        private static void DresserCompleted(object sender, Lamp l)
+        {
+            l.Activate();
+        }
+
     }
 }

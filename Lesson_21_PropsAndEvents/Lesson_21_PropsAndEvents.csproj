@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Cabinet.cs" />
     <Compile Include="Dresser.cs" />
+    <Compile Include="Interface1.cs" />
+    <Compile Include="Lamp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

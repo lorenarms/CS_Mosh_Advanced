@@ -12,10 +12,10 @@ namespace Lesson_21_PropsAndEvents
 {
     internal class Dresser
     {
-        public event EventHandler<object> DresserFinished;
+        public event EventHandler<Lamp> DresserFinished;
         public bool finished = false;
 
-        public bool Start(object nextProp)
+        public bool Start(Lamp l)
         {
             WriteLine("Dresser is Activated");
 
@@ -39,7 +39,8 @@ namespace Lesson_21_PropsAndEvents
                 
                 if (userInputCode == 1234)
                 {
-                    Completed(nextProp);
+                    Completed(l);
+
                     return true;
                 }
 
@@ -52,10 +53,10 @@ namespace Lesson_21_PropsAndEvents
             return false;
         }
 
-        private void Completed(Object nextProp)
+        private void Completed(Lamp l)
         {
             finished = true;
-            DresserFinished?.Invoke(this, nextProp);
+            DresserFinished?.Invoke(this, l);
         }
     }
 }

@@ -14,8 +14,10 @@ namespace Lesson_21_PropsAndEvents
         public event EventHandler<object> CabinetFinished;
         private bool finished = false;
 
+
         public bool Start(object next)
         {
+
             WriteLine("Cabinet is Active");
             
             // check if cabinet is finished first
