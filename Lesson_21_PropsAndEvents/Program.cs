@@ -19,8 +19,7 @@ namespace Lesson_21_PropsAndEvents
             
 
             d.DresserFinished += DresserCompleted;
-            d.DresserFinished += PropCompleted;
-            c.CabinetFinished += PropCompleted;
+            c.CabinetFinished += CabinetCompleted;
 
 
             var userPropChoice = 0;
@@ -35,15 +34,15 @@ namespace Lesson_21_PropsAndEvents
                 // conditionals for which prop to play
                 if (userPropChoice == 1)
                 {
-                    c.Start(d);
+                    c.Start(new ClassPasser(d));
                 }
                 else if (userPropChoice == 2)
                 {
-                    d.Start(l);
+                    d.Start(new ClassPasser(l));
                 }
                 else if (userPropChoice == 3)
                 {
-                    l.Start(0);
+                    l.Start(new ClassPasser(0));
                 }
             }
 
@@ -64,9 +63,19 @@ namespace Lesson_21_PropsAndEvents
         }
 
         // each prop gets its own 'completed' event to start the next one
-        private static void DresserCompleted(object sender, Lamp l)
+      
+        private static void DresserCompleted(object sender, ClassPasser cp)
         {
+            Lamp l = (Lamp) cp.ClassToPass;
             l.Activate();
+
+        }
+
+        private static void CabinetCompleted(object sender, ClassPasser cp)
+        {
+            Dresser d = (Dresser)cp.ClassToPass;
+            d.Activate();
+
         }
 
     }

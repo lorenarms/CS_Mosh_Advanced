@@ -11,32 +11,30 @@ namespace Lesson_21_PropsAndEvents
 {
     internal class Cabinet
     {
-        public event EventHandler<object> CabinetFinished;
-        private bool finished = false;
+        public event EventHandler<ClassPasser> CabinetFinished;
+        private bool _finished = false;
 
 
-        public bool Start(object next)
+        public bool Start(ClassPasser cp)
         {
 
             WriteLine("Cabinet is Active");
             
             // check if cabinet is finished first
-            if (finished)
+            if (_finished)
             {
                 WriteLine("You have finished this prop.");
-                return finished;
+                return _finished;
             }
 
             // Cabinet logic
-            
-            Completed(next);
-            return finished;
+
+            _finished = true;
+            CabinetFinished?.Invoke(this, cp);
+
+            return _finished;
         }
 
-        private void Completed(object next)
-        {
-            finished = true;
-            CabinetFinished?.Invoke(this, next);
-        }
+       
     }
 }

@@ -9,13 +9,18 @@ namespace Lesson_21_PropsAndEvents
 {
     internal class Lamp
     {
+
+        public event EventHandler<ClassPasser> LampFinished;
+        private bool _finished = false;
         private bool _active = false;
         
-        public void Start(object next)
+        public void Start(ClassPasser cp)
         {
             WriteLine(!_active ? "Lamp is not active" : "Lamp is active");
             
             // Lamp logic
+
+
         }
        
         // Lamp is activated when previous prop in sequence is finished, event raised
