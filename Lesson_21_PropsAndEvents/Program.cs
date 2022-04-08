@@ -78,5 +78,10 @@ namespace Lesson_21_PropsAndEvents
 
         }
 
+        private static void LampCompleted(object sender, ClassPasser cp)
+        {
+
+        }
+
     }
 }
