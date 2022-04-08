@@ -36,6 +36,7 @@ namespace Lesson_21_PropsAndEvents
                     _finished = false;
                 }
 
+
             }
             else if (_finished)
             {
