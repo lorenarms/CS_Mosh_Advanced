@@ -16,10 +16,14 @@ namespace Lesson_21_PropsAndEvents
             Dresser d = new Dresser();
             Cabinet c = new Cabinet();
             Lamp l = new Lamp();
+            Door dr = new Door();
             
 
             d.DresserFinished += DresserCompleted;
             c.CabinetFinished += CabinetCompleted;
+            l.LampFinished += LampCompleted;
+            dr.DoorFinished += DoorOpened;
+            
 
 
             var userPropChoice = 0;
@@ -42,7 +46,11 @@ namespace Lesson_21_PropsAndEvents
                 }
                 else if (userPropChoice == 3)
                 {
-                    l.Start(new ClassPasser(0));
+                    l.Start(new ClassPasser(dr));
+                }
+                else if (userPropChoice == 4)
+                {
+                    dr.Start(new ClassPasser(0));
                 }
             }
 
@@ -79,6 +87,12 @@ namespace Lesson_21_PropsAndEvents
         }
 
         private static void LampCompleted(object sender, ClassPasser cp)
+        {
+            Door dr = (Door)cp.ClassToPass;
+            dr.Activate();
+        }
+
+        private static void DoorOpened(object sender, ClassPasser cp)
         {
 
         }
