@@ -12,33 +12,33 @@ namespace Lesson_21_PropsAndEvents
     {
 
         public event EventHandler<ClassPasser> LampFinished;
-        private bool _finished = false;
-        private bool _active = false;
-        
+        public bool Finished { get; private set; } = false;
+        public bool Active { get; private set; } = false;
+
         public void Start(ClassPasser cp)
         {
-            WriteLine(!_active ? "Lamp is not active" : "Lamp is active");
+            WriteLine(!Active ? "Lamp is not active" : "Lamp is active");
 
             // Lamp logic
 
-            if (!_finished && _active)
+            if (!Finished && Active)
             {
                 WriteLine("Did you finish the Lamp?");
                 string userFinishedLamp = ReadLine();
                 if (userFinishedLamp == "yes" || userFinishedLamp == "1")
                 {
-                    _finished = true;
+                    Finished = true;
                     LampFinished?.Invoke(this, cp);
 
                 }
                 else
                 {
-                    _finished = false;
+                    Finished = false;
                 }
 
 
             }
-            else if (_finished)
+            else if (Finished)
             {
                 WriteLine("Lamp is finished already.");
             }
@@ -50,7 +50,7 @@ namespace Lesson_21_PropsAndEvents
         public void Activate()
         {
             WriteLine("Lamp is now active");
-            _active = true;
+            Active = true;
         }
     }
 }

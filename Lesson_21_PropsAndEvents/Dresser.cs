@@ -13,23 +13,23 @@ namespace Lesson_21_PropsAndEvents
     internal class Dresser
     {
         public event EventHandler<ClassPasser> DresserFinished;
-        private bool _finished = false;
-        private bool _active = false;
-        
+        public bool Finished { get; private set; } = false;
+        public bool Active { get; set; } = false;
+
 
         public bool Start(ClassPasser cp)
         {
-            if (!_active)
+            if (!Active)
             {
                 WriteLine("Dresser is not active.");
                 return false;
             }
             
             // check if prop is finished first
-            if (_finished)
+            if (Finished)
             {
                 WriteLine("You have finished this prop.");
-                return _finished;
+                return Finished;
             }
 
             // Dresser game logic
@@ -46,7 +46,7 @@ namespace Lesson_21_PropsAndEvents
                 if (userInputCode == 1234)
                 {
                     // event trigger
-                    _finished = true;
+                    Finished = true;
                     DresserFinished?.Invoke(this, cp);
 
                     return true;
@@ -64,7 +64,7 @@ namespace Lesson_21_PropsAndEvents
         public void Activate()
         {
             WriteLine("Dresser is now active");
-            _active = true;
+            Active = true;
         }
 
 

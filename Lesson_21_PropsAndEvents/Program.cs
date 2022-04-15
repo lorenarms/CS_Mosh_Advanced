@@ -13,18 +13,23 @@ namespace Lesson_21_PropsAndEvents
     {
         static void Main(string[] args)
         {
+            // Instantiate objects of props
             Dresser d = new Dresser();
             Cabinet c = new Cabinet();
             Lamp l = new Lamp();
             Door dr = new Door();
+            TreasureChest t = new TreasureChest();
             
-
+            // Subscribe to events
             d.DresserFinished += DresserCompleted;
             c.CabinetFinished += CabinetCompleted;
             l.LampFinished += LampCompleted;
             dr.DoorFinished += DoorOpened;
-            
+            t.ChestOpen += Finished;
 
+            // Activate first prop in sequence
+            c.Activate();
+            
 
             var userPropChoice = 0;
 
@@ -50,7 +55,12 @@ namespace Lesson_21_PropsAndEvents
                 }
                 else if (userPropChoice == 4)
                 {
-                    dr.Start(new ClassPasser(0));
+                    dr.Start(new ClassPasser(t));
+                }
+                else if (t.Active && dr.Active && userPropChoice == 5)
+                {
+                    t.Start(new ClassPasser(t));
+                    userPropChoice = -999;
                 }
             }
 
@@ -60,32 +70,18 @@ namespace Lesson_21_PropsAndEvents
         }
 
         
-        public static void PropCompleted(object sender, object next)
-        {
-            string s = sender.ToString();
-            string n = next.ToString();
-
-            var finished = next.Equals(0) ? n = "FINISHED" : n;
-
-            WriteLine($"{s} Completed, {n} Activated");
-        }
-
         // each prop gets its own 'completed' event to start the next one
+        private static void CabinetCompleted(object sender, ClassPasser cp)
+        {
+            Dresser d = (Dresser)cp.ClassToPass;
+            d.Activate();
+        }
       
         private static void DresserCompleted(object sender, ClassPasser cp)
         {
             Lamp l = (Lamp) cp.ClassToPass;
             l.Activate();
-
         }
-
-        private static void CabinetCompleted(object sender, ClassPasser cp)
-        {
-            Dresser d = (Dresser)cp.ClassToPass;
-            d.Activate();
-
-        }
-
         private static void LampCompleted(object sender, ClassPasser cp)
         {
             Door dr = (Door)cp.ClassToPass;
@@ -94,8 +90,17 @@ namespace Lesson_21_PropsAndEvents
 
         private static void DoorOpened(object sender, ClassPasser cp)
         {
+            TreasureChest t = (TreasureChest) cp.ClassToPass;
+            t.Activate();
+        }
+
+        private static void Finished(object sender, ClassPasser cp)
+        {
+            WriteLine("You have finished the game!");
 
         }
+
+
 
     }
 }
