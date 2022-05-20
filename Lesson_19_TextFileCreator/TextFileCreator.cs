@@ -42,6 +42,25 @@ namespace Lesson_19_TextFileCreator
                 name = "textFile_";
             }
 
+            Write("What is your Windows Username (this is used for the directory)? ");
+            string username = ReadLine();
+
+            Write("Is '" + username + "' correct? y/n ");
+            string confirm = ReadLine();
+            if (confirm != null)
+            {
+                confirm.ToLower();
+                while (confirm != null && !(confirm.Equals("y") || confirm.Equals("yes") ))
+                {
+                    Write("What is your Windows Username (this is used for the directory)? ");
+                    username = ReadLine();
+
+                    Write("Is '" + username + "' correct? y/n ");
+                    confirm = ReadLine();
+                }
+            }
+
+
             // create new GenerateID object
             var newID = new GenerateID();
             
@@ -49,7 +68,9 @@ namespace Lesson_19_TextFileCreator
             for (int i = 1; i <= num; i++)
             {
                 // name the file and the path 
-                string path = "C:\\Users\\lawre\\Desktop\\New folder\\" + name + i + ".txt";
+                string folder = "C:\\Users\\" + username + "\\Desktop\\New folder\\";
+                string path = "C:\\Users\\" + username + "\\Desktop\\New folder\\" + name + i + ".txt";
+
                 string text;
 
                 // create bytes of random string
@@ -73,14 +94,14 @@ namespace Lesson_19_TextFileCreator
                 // try to either create or write to the file
                 try
                 {
-                    if (File.Exists(path))
+                    if (File.Exists(folder))
                     {
                         //writes to file
                         System.IO.File.WriteAllText(path, text);
                     }
                     else
                     {
-                        // Create the file.
+                        System.IO.Directory.CreateDirectory(folder);
                         System.IO.File.WriteAllText(path, text);
 
                     }
@@ -94,7 +115,7 @@ namespace Lesson_19_TextFileCreator
 
 
             }
-            WriteLine("Files created successully. Press 'enter' to close this windwo.");
+            WriteLine("Files created successfully. Press 'enter' to close this window.");
             ReadKey();
             
 
