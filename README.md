@@ -5,3 +5,7 @@ The listed exercises here are all written in C#. They are mostely inspired from 
 The link below leads to the Udemy course that I followed and completed.
 
 <a href="https://www.udemy.com/course/csharp-advanced/">C# Advanced Topics: Prepare for Technical Interviews</a> 
+
+Here is my Certificate of Completion for the above mentioned course:
+
+<img src="https://github.com/lorenarms/Personal_CSharp_Mosh_Advanced/blob/master/C-Sharp%20Advanced.jpg" alt="certificate" width=auto>
