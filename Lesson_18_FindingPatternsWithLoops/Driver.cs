@@ -32,7 +32,7 @@ namespace Lesson_18_FindingPatternsWithLoops
 {
     class Driver
     {
-        public static void DrawPicture(string[] pictureAsString, string[] patternToFind)
+        public static void DrawPicture(string[] pictureAsString)
         {
             WriteLine("PICTURE:");
             for (int i = 0; i < pictureAsString.Length; i++)
@@ -44,6 +44,13 @@ namespace Lesson_18_FindingPatternsWithLoops
                 Write("\n");
             }
 
+            WriteLine();
+
+
+        }
+
+        public static void DrawPattern(string[] patternToFind)
+        {
             WriteLine("\nPATTERN TO FIND:");
             for (int i = 0; i < patternToFind.Length; i++)
             {
@@ -172,22 +179,34 @@ namespace Lesson_18_FindingPatternsWithLoops
                 
             string[] pictureAsString = System.IO.File.ReadAllLines(@"C:\Users\Lawrence\Git Repos\Personal_CSharp_Mosh_Advanced\Lesson_18_FindingPatternsWithLoops\strings.txt");
 
-            
+
+            // TODO: add option to search for multi-line pattern; see below for examples
+
+            //string[] str = {
+            //    "abcdef", "ghijkl", "mnopqr", "stuvwx"
+            //};
+
+            //string[] pat = {"abc", "ghi", "mno", "stu"};
+            //string[] pat = {"abc"};
+            //string[] pat = {"abc", "ghi"};
+            //string[] pat = {"abc", "ghi", "mno"};
+            //string[] pat = {"ghi", "mno", "stu"};
+            //string[] pat = {"mno", "stu" };
+            //string[] pat = {"big", "lte"};
+            //string[] pat = {"ij", "op" };
+
+            DrawPicture(pictureAsString);
+
             WriteLine("Input a lowercase string to find: ");
             string input = ReadLine();
             string[] pattern = {input};
 
+            DrawPattern(pattern);
 
-            DrawPicture(pictureAsString, pattern);
-
-            // variables for 'height' of array
-            // and length of array
             // assume all 'rows' are of same length
             int pictureHeight = pictureAsString.Length;
             int pictureWidth = pictureAsString[0].Length;
-
-            // vars for 'height' of pattern
-            // and length of pattern
+            
             int patternToFindHeight = pattern.Length - 1;
             int patternToFindWidth = pattern[0].Length - 1;
 
@@ -195,15 +214,28 @@ namespace Lesson_18_FindingPatternsWithLoops
 
             if (locationOfPattern[0] == -1 && locationOfPattern[1] == -1)
             {
+                ForegroundColor = ConsoleColor.Red;
                 WriteLine("Pattern not found.");
+                ResetColor();
+                
             }
             else
             {
-                WriteLine("Pattern Found at row " + (locationOfPattern[0] + 1) + ", column " + (locationOfPattern[1] + 1));
+                Write("Pattern Found at ");
+                ForegroundColor = ConsoleColor.Green;
+                Write("row " + (locationOfPattern[0] + 1));
+                ResetColor();
+                Write(" and ");
+                ForegroundColor = ConsoleColor.Green;
+                Write("column " + (locationOfPattern[1] + 1));
+                ResetColor();
+                WriteLine();
+                PrintFinalPicture(pictureAsString, pattern, locationOfPattern);
+
             }
             
-            PrintFinalPicture(pictureAsString, pattern, locationOfPattern);
 
+            ForegroundColor = ConsoleColor.DarkMagenta;
             WriteLine("Press Enter to Exit");
 
             ReadKey();
