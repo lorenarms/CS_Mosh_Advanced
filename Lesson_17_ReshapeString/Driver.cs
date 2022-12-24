@@ -17,6 +17,9 @@ namespace Lesson_17_ReshapeString
             
             //string str = "abcde fghijk lmno p";
             WriteLine("Original string: " + str);
+
+            //TODO: add option to change what number the string is reshaped by (n)
+
             str = ReshapeString(str, 3);
             WriteLine("Reshaped string:\n" + str);
 
@@ -24,7 +27,7 @@ namespace Lesson_17_ReshapeString
         }
 
 
-        // reshape a string with no spaces and layed out in lines of at
+        // reshape a string with no spaces and laidd out in lines of at
         // most 'n' characters
         // do not add a trailing '\n' character
 
