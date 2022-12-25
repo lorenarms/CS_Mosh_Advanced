@@ -31,6 +31,8 @@
 
   <p align="center">
     Lawrence Artl III
+    
+    
     <br />
     <a href="https://github.com/lorenarms/SNHU_CS_370_Emerging_Trends_in_CS/tree/main/writeups"><strong>Explore the docs »</strong></a>
     <br />
@@ -40,6 +42,7 @@
     <a href="https://github.com/lorenarms/SNHU_CS_465_Full-Stack-Development-I/issues">Report Bug</a>
     ·
     <a href="https://github.com/lorenarms/SNHU_CS_465_Full-Stack-Development-I/issues">Request Feature</a>
+    
   </p>
 </div>
 
