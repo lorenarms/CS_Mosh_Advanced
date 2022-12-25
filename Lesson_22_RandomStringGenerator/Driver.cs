@@ -3,24 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace Lesson_22_RandomStringGenerator
 {
-    internal class Driver
+    class Driver
     {
         static void Main(string[] args)
         {
             var generator = new RandomGenerator();
-            var randomNumber = generator.RandomNumber(5, 100);
-            Console.WriteLine($"Random number between 5 and 100 is {randomNumber}");
+            var writeLines = new WriteAllAlines();
+            List<string> linesToWriteToFile = new List<string>{};
+            
 
-            var randomString = generator.RandomString(20);
-            Console.WriteLine($"Random string of 10 chars is {randomString}");
+            //var randomNumber = generator.RandomNumber(5, 100);
+            //Console.WriteLine($"Random number between 5 and 100 is {randomNumber}");
+            //linesToWriteToFile.Add(randomNumber.ToString());
 
-            var randomPassword = generator.RandomPassword();
-            Console.WriteLine($"Random string of 6 chars is {randomPassword}");
+            for (int i = 0; i < 20; i++)
+            {
+                var randomString = generator.RandomString(40);
+                linesToWriteToFile.Add(randomString);
 
-            Console.ReadKey();
+            }
+
+            //var randomPassword = generator.RandomPassword();
+            //Console.WriteLine($"Random string of 6 chars is {randomPassword}");
+            //linesToWriteToFile.Add(randomPassword);
+
+            Task writeToFile = writeLines.WriteStringsToFile(linesToWriteToFile);
+
+            
         }
     }
 
@@ -75,6 +88,23 @@ namespace Lesson_22_RandomStringGenerator
             // 2-Letters upper case  
             passwordBuilder.Append(RandomString(2));
             return passwordBuilder.ToString();
+        }
+    }
+
+    class WriteAllAlines
+    {
+        public async Task WriteStringsToFile(List<string> input)
+        {
+            //string[] lines =
+            //{
+            //    "First lines", "Second line", "Third line"
+            //};
+
+
+            // writes a file to the current program directory, wherever that is
+            await File.WriteAllLinesAsync(@".\RandomTextWritten.txt", input);
+
+
         }
     }
 }
